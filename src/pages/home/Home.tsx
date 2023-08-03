@@ -50,7 +50,7 @@ const Home = () => {;
 		})
 	, { getNextPageParam: (lastPage) => lastPage.nextPage });
 
-  if (error) return <>An error has occurred: {error.message}</>
+  if (error) return <>An error has occurred!</>
 
   return (
 		<main className="px-5 py-8">
