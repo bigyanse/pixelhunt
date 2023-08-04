@@ -10,3 +10,11 @@ A React application that allows users to search for images using the [Unsplash A
 - **Infinite Scroll:** Infinite scroll to load more images as the user reaches the end of the current results.
 - **Responsive Design:** Ensure the application looks great and functions flawlessly on various devices and screen sizes.
 - **Cached Responses:** The responses are cached so that the consecutive fetch requests are faster and saves bandwidth.
+
+## Technologies Used
+
+- React.js
+- TailwindCSS
+- React Router
+- React Query
+- Hero Icons
