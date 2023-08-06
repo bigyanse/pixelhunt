@@ -6,6 +6,7 @@ A React application that allows users to search for images using the [Unsplash A
 
 - **Input Field:** A search bar where users can type in their search term.
 - **Search Functionality:** Used the Unsplash API to fetch images related to the user's search term in real-time.
+- **Debounce In Search:** Debounce in search input.
 - **Image Display:** Images showcase in a visually appealing grid or carousel layout.
 - **Infinite Scroll:** Infinite scroll to load more images as the user reaches the end of the current results.
 - **Responsive Design:** Ensure the application looks great and functions flawlessly on various devices and screen sizes.
