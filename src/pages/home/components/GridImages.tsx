@@ -1,6 +1,22 @@
+import { useEffect } from "react";
 import { FetchNextPageOptions, InfiniteQueryObserverResult } from "react-query"
 
 const GridImages = ({ pages, fetchNextPage, hasNextPage, isFetchingNextPage }: { pages: any, fetchNextPage: (options?: FetchNextPageOptions | undefined) => Promise<InfiniteQueryObserverResult<any, unknown>>, hasNextPage: boolean | undefined, isFetchingNextPage: boolean }) => {
+  const handleScroll = () => {
+    const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+    if(scrollHeight - scrollTop === clientHeight) {
+      fetchNextPage();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 	if(pages) {
 		return (
 			<div className="w-full">

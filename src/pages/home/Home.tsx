@@ -1,29 +1,10 @@
-import { useEffect, useState } from "react";
-import GridImages from "./components/GridImages"
-import SearchBar from "./components/SearchBar"
-import { useInfiniteQuery } from "react-query"
+import { useState } from "react";
+import GridImages from "./components/GridImages";
+import SearchBar from "./components/SearchBar";
+import { useInfiniteQuery } from "react-query";
 import Sidebar from "./components/Sidebar";
 import LoadingGrid from "./components/LoadingGrid";
-
-function useDebounce(value: string, delay: number) {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-
-  useEffect(() => {
-    const handler = setTimeout(() => {
-			if(value === "") {
-				setDebouncedValue("mountain");
-				return;
-			}
-      setDebouncedValue(value);
-    }, delay);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [value, delay]);
-
-  return debouncedValue;
-}
+import useDebounce from "../../hooks/useDebounce";
 
 const Home = () => {;
 	const [sortBy, setSortBy] = useState("relevant");
@@ -62,7 +43,7 @@ const Home = () => {;
 				{!isLoading && (!data || !data.pages.length || !data.pages[data.pages.length-1].results.length) && <div className="mt-10 text-2xl">No results found!</div>}
 			</div>
 		</main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
