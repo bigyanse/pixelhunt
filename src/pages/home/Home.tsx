@@ -19,7 +19,7 @@ const Home = () => {;
 	} = useInfiniteQuery(['fetchImages', sortBy, debounceSearchTerm], ({ pageParam = 1 }) =>
 		fetch(`https://api.unsplash.com/search/photos?query=${debounceSearchTerm}&order_by=${sortBy}&page=${pageParam}`, {
 			headers: {
-				"Authorization": "Client-ID 2x694WEidKMH8WSY-70TKfFv4geqUEqmEZvjS0yVQbQ",
+				"Authorization": `Client-ID ${import.meta.env.VITE_UNSPLASH_API_KEY}`,
 			},
 		}).then(res => 
 			res.json()
